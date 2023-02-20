@@ -38,15 +38,15 @@
             this.textBoxDTB = new System.Windows.Forms.TextBox();
             this.comboBoxLSH = new System.Windows.Forms.ComboBox();
             this.dateTimePickerNS = new System.Windows.Forms.DateTimePicker();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.radioButtonNam = new System.Windows.Forms.RadioButton();
+            this.radioButtonNu = new System.Windows.Forms.RadioButton();
+            this.labelGender = new System.Windows.Forms.Label();
+            this.checkBoxImg = new System.Windows.Forms.CheckBox();
+            this.checkBoxFile = new System.Windows.Forms.CheckBox();
+            this.checkBoxCCCD = new System.Windows.Forms.CheckBox();
+            this.labelFile = new System.Windows.Forms.Label();
+            this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelMSSV
@@ -130,108 +130,108 @@
             this.dateTimePickerNS.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerNS.TabIndex = 10;
             // 
-            // radioButton1
+            // radioButtonNam
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(488, 36);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonNam.AutoSize = true;
+            this.radioButtonNam.Location = new System.Drawing.Point(488, 36);
+            this.radioButtonNam.Name = "radioButtonNam";
+            this.radioButtonNam.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonNam.TabIndex = 11;
+            this.radioButtonNam.TabStop = true;
+            this.radioButtonNam.Text = "Nam";
+            this.radioButtonNam.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonNu
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(488, 69);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonNu.AutoSize = true;
+            this.radioButtonNu.Location = new System.Drawing.Point(488, 69);
+            this.radioButtonNu.Name = "radioButtonNu";
+            this.radioButtonNu.Size = new System.Drawing.Size(39, 17);
+            this.radioButtonNu.TabIndex = 12;
+            this.radioButtonNu.TabStop = true;
+            this.radioButtonNu.Text = "Nữ";
+            this.radioButtonNu.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // labelGender
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(416, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Giới tính";
+            this.labelGender.AutoSize = true;
+            this.labelGender.Location = new System.Drawing.Point(416, 36);
+            this.labelGender.Name = "labelGender";
+            this.labelGender.Size = new System.Drawing.Size(47, 13);
+            this.labelGender.TabIndex = 13;
+            this.labelGender.Text = "Giới tính";
             // 
-            // checkBox1
+            // checkBoxImg
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(488, 160);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(45, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "Ảnh";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxImg.AutoSize = true;
+            this.checkBoxImg.Location = new System.Drawing.Point(488, 160);
+            this.checkBoxImg.Name = "checkBoxImg";
+            this.checkBoxImg.Size = new System.Drawing.Size(45, 17);
+            this.checkBoxImg.TabIndex = 14;
+            this.checkBoxImg.Text = "Ảnh";
+            this.checkBoxImg.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxFile
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(488, 199);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(61, 17);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "Học bạ";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxFile.AutoSize = true;
+            this.checkBoxFile.Location = new System.Drawing.Point(488, 199);
+            this.checkBoxFile.Name = "checkBoxFile";
+            this.checkBoxFile.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxFile.TabIndex = 15;
+            this.checkBoxFile.Text = "Học bạ";
+            this.checkBoxFile.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxCCCD
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(488, 239);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(55, 17);
-            this.checkBox3.TabIndex = 16;
-            this.checkBox3.Text = "CCCD";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxCCCD.AutoSize = true;
+            this.checkBoxCCCD.Location = new System.Drawing.Point(488, 239);
+            this.checkBoxCCCD.Name = "checkBoxCCCD";
+            this.checkBoxCCCD.Size = new System.Drawing.Size(55, 17);
+            this.checkBoxCCCD.TabIndex = 16;
+            this.checkBoxCCCD.Text = "CCCD";
+            this.checkBoxCCCD.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // labelFile
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(416, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Hồ sơ";
+            this.labelFile.AutoSize = true;
+            this.labelFile.Location = new System.Drawing.Point(416, 160);
+            this.labelFile.Name = "labelFile";
+            this.labelFile.Size = new System.Drawing.Size(35, 13);
+            this.labelFile.TabIndex = 17;
+            this.labelFile.Text = "Hồ sơ";
             // 
-            // button1
+            // buttonOK
             // 
-            this.button1.Location = new System.Drawing.Point(419, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonOK.Location = new System.Drawing.Point(419, 280);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.TabIndex = 18;
+            this.buttonOK.Text = "OK";
+            this.buttonOK.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonCancel
             // 
-            this.button2.Location = new System.Drawing.Point(533, 280);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonCancel.Location = new System.Drawing.Point(533, 280);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 19;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 331);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonOK);
+            this.Controls.Add(this.labelFile);
+            this.Controls.Add(this.checkBoxCCCD);
+            this.Controls.Add(this.checkBoxFile);
+            this.Controls.Add(this.checkBoxImg);
+            this.Controls.Add(this.labelGender);
+            this.Controls.Add(this.radioButtonNu);
+            this.Controls.Add(this.radioButtonNam);
             this.Controls.Add(this.dateTimePickerNS);
             this.Controls.Add(this.comboBoxLSH);
             this.Controls.Add(this.textBoxDTB);
@@ -261,14 +261,14 @@
         private System.Windows.Forms.TextBox textBoxDTB;
         private System.Windows.Forms.ComboBox comboBoxLSH;
         private System.Windows.Forms.DateTimePicker dateTimePickerNS;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton radioButtonNam;
+        private System.Windows.Forms.RadioButton radioButtonNu;
+        private System.Windows.Forms.Label labelGender;
+        private System.Windows.Forms.CheckBox checkBoxImg;
+        private System.Windows.Forms.CheckBox checkBoxFile;
+        private System.Windows.Forms.CheckBox checkBoxCCCD;
+        private System.Windows.Forms.Label labelFile;
+        private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }
