@@ -139,8 +139,8 @@ namespace QLSV
             {
                 string target = datashow.SelectedRows[0].Cells[0].Value.ToString();
                 EditForm.ShowForm(target);
+                InitializeDataView();
             }
-            InitializeDataView();
         }
 
         private void buttonSort_Click(object sender, EventArgs e)
@@ -156,7 +156,7 @@ namespace QLSV
                 string[] pendingDelete = new string[datashow.SelectedRows.Count];
                 for (int index = 0; index < datashow.SelectedRows.Count; index++)
                 {
-                    pendingDelete[index] = datashow.SelectedRows[index].Cells[0].ToString();
+                    pendingDelete[index] = datashow.SelectedRows[index].Cells[0].Value.ToString();
                 }
                 QLSV.Database.RemoveRangeSV(pendingDelete);
                 InitializeDataView();

@@ -5,5 +5,4 @@
 105|N N A|21TCLC_DT1|01/01/2003|4.7|True|True|True|True
 106|T V S|21TCLC_DT1|01/01/2003|1.4|True|True|True|True
 107|N T M|21TCLC_DT5|01/01/2003|2.5|True|True|True|True
-108|H L A T|21TCLC_DT1|01/01/2003|2.5|True|True|True|True
-109|Anh Ledger|21TDT|02/20/2023|5.5|True|True|True|True
+108|A. Ledger|21TCLC_DT1|02/01/2023|2.5|False|False|True|True

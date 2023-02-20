@@ -236,23 +236,21 @@ namespace QLSV
         }
         public void Update(SV item)
         {
-            for (int index = 0; index < Table.Rows.Count; index++)
+            int index = Exist(item.MSSV);
+            if (index == -1) AddSV(item);
+            else
             {
-                if ((string)Table.Rows[index].ItemArray[0] == item.MSSV)
-                {
-                    Table.Rows[index].ItemArray[1] = item.Name;
-                    Table.Rows[index].ItemArray[2] = item.LSH;
-                    Table.Rows[index].ItemArray[3] = item.NS;
-                    Table.Rows[index].ItemArray[4] = item.DTB;
-                    Table.Rows[index].ItemArray[5] = item.Gender;
-                    Table.Rows[index].ItemArray[6] = item.Img;
-                    Table.Rows[index].ItemArray[7] = item.Files;
-                    Table.Rows[index].ItemArray[8] = item.CCCD;
-                    return;
-                }
+                Table.Rows[index].BeginEdit();
+                Table.Rows[index].SetField("Ho ten", item.Name);
+                Table.Rows[index].SetField("Lop sinh hoat", item.LSH);
+                Table.Rows[index].SetField("Ngay sinh", item.NS);
+                Table.Rows[index].SetField("DTB",item.DTB);
+                Table.Rows[index].SetField("Gender",item.Gender);
+                Table.Rows[index].SetField("Anh",item.Img);
+                Table.Rows[index].SetField("Hoc ba",item.Files);
+                Table.Rows[index].SetField("CCCD",item.CCCD);
+                Table.Rows[index].AcceptChanges();
             }
-            //if not found item
-            AddSV(item);
         }
     }
 }
