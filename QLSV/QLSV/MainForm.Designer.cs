@@ -97,6 +97,7 @@
             this.buttonDelete.TabIndex = 9;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonSort
             // 
@@ -161,6 +162,7 @@
             this.Controls.Add(this.labelLSH);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.datashow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Xml.Linq;
 
 namespace QLSV
 {
-    public class SV :IComparable<SV>
+    public class SV : IComparable<SV>
     {
 
         public string MSSV { get; set; }
@@ -62,7 +61,7 @@ namespace QLSV
 
         public override string ToString()
         {
-            return MSSV + "|" + Name + "|" + LSH + "|" + NS.ToString("dd/MM/yyyy") + "|" + DTB.ToString() + "|" + Gender.ToString() + "|" + Img.ToString() + "|" + Files.ToString() + "|" + CCCD.ToString();
+            return MSSV + "|" + Name + "|" + LSH + "|" + NS.ToString("MM/dd/yyyy") + "|" + DTB.ToString() + "|" + Gender.ToString() + "|" + Img.ToString() + "|" + Files.ToString() + "|" + CCCD.ToString();
         }
 
         public int CompareTo(SV other)
@@ -154,15 +153,27 @@ namespace QLSV
                 sr.Close();
             }
         }
-        private void SaveFile()
+        public void SaveFile()
         {
-            using (StreamWriter sw = new StreamWriter(path,false))
+            using (StreamWriter sw = new StreamWriter(path, false))
             {
                 for (int index = 0; index < Table.Rows.Count; index++)
                 {
-                    sw.WriteLine(Table.Rows[index].ToString());
+                    SV temp = new SV
+                    (
+                        (string)Table.Rows[index].ItemArray[0],
+                        (string)Table.Rows[index].ItemArray[1],
+                        (string)Table.Rows[index].ItemArray[2],
+                        (DateTime)Table.Rows[index].ItemArray[3],
+                        (double)Table.Rows[index].ItemArray[4],
+                        (bool)Table.Rows[index].ItemArray[5],
+                        (bool)Table.Rows[index].ItemArray[6],
+                        (bool)Table.Rows[index].ItemArray[7],
+                        (bool)Table.Rows[index].ItemArray[8]
+                    );
+                    sw.WriteLine(temp.ToString());
                 }
-                sw.Close(); 
+                sw.Close();
             }
         }
         public int Exist(string MSSV)
@@ -176,24 +187,49 @@ namespace QLSV
             }
             return -1;
         }
+
+        public SV GetSV(string MSSV)
+        {
+            int index = Exist(MSSV);
+            if (index == -1)
+            {
+                return null;
+            }
+            else
+            {
+                SV result = new SV
+                (
+                    (string)Table.Rows[index].ItemArray[0],
+                    (string)Table.Rows[index].ItemArray[1],
+                    (string)Table.Rows[index].ItemArray[2],
+                    (DateTime)Table.Rows[index].ItemArray[3],
+                    (double)Table.Rows[index].ItemArray[4],
+                    (bool)Table.Rows[index].ItemArray[5],
+                    (bool)Table.Rows[index].ItemArray[6],
+                    (bool)Table.Rows[index].ItemArray[7],
+                    (bool)Table.Rows[index].ItemArray[8]
+                );
+                return result;
+            }
+        }
         public void AddSV(SV item)
         {
             Table.Rows.Add(item.MSSV, item.Name, item.LSH, item.NS, item.DTB, item.Gender, item.Img, item.Files, item.CCCD);
         }
-        public void RemoveSV(SV item)
+        public void RemoveSV(string MSSV)
         {
             for (int index = 0; index < Table.Rows.Count; index++)
             {
-                if ((string)Table.Rows[index].ItemArray[0] == item.MSSV)
+                if ((string)Table.Rows[index].ItemArray[0] == MSSV)
                 {
                     Table.Rows.RemoveAt(index);
                     return;
                 }
             }
         }
-        public void RemoveRangeSV(params SV[] items)
+        public void RemoveRangeSV(params string[] mssvs)
         {
-            foreach (SV i in items)
+            foreach (string i in mssvs)
             {
                 RemoveSV(i);
             }
@@ -215,6 +251,8 @@ namespace QLSV
                     return;
                 }
             }
+            //if not found item
+            AddSV(item);
         }
     }
 }

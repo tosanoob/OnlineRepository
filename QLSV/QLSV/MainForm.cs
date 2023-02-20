@@ -1,18 +1,16 @@
-﻿using System.CodeDom.Compiler;
+﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System;
 using System.Windows.Forms;
 
 namespace QLSV
 {
     public partial class MainForm : Form
     {
-        public delegate SVList GetData(string searchString, string classFilterOption );
+        public delegate SVList GetData(string searchString, string classFilterOption);
         public delegate SVList SortList(string sortOption);
         public GetData load;
         public SortList sort;
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -48,6 +46,8 @@ namespace QLSV
 
         private void InitializeDataView()
         {
+            comboBoxLSH.Text = "All";
+            textBoxSearch.Text = "";
             datashow.DataSource = QLSV.Database.Table;
         }
 
@@ -61,11 +61,11 @@ namespace QLSV
                 {
                     tempname = (string)QLSV.Database.Table.Rows[index].ItemArray[1];
                     if (tempname.Contains(searchString))
-                    result.Items.Add(new SV(QLSV.Database.Table.Rows[index].ItemArray));
+                        result.Items.Add(new SV(QLSV.Database.Table.Rows[index].ItemArray));
                 }
-            } 
+            }
 
-            else if (classFilterOption != "" && classFilterOption != "All" )
+            else if (classFilterOption != "" && classFilterOption != "All")
             {
                 string temp = "";
                 string tempname = "";
@@ -114,27 +114,59 @@ namespace QLSV
         private void buttonSearch_Click(object sender, System.EventArgs e)
         {
             string classFilterOption = comboBoxLSH.SelectedItem.ToString();
-            datashow.DataSource = load(textBoxSearch.Text, classFilterOption ).Items;
+            datashow.DataSource = load(textBoxSearch.Text, classFilterOption).Items;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             DetailForm AddForm = new DetailForm();
-            AddForm.ShowDialog();
-            //defining
+            AddForm.ShowForm();
+            InitializeDataView();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             DetailForm EditForm = new DetailForm();
-            EditForm.ShowDialog();
-            //defining
+            if (datashow.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please choose a target to edit, else add a new item");
+            }
+            else if (datashow.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Please choose one target only");
+            }
+            else
+            {
+                string target = datashow.SelectedRows[0].Cells[0].Value.ToString();
+                EditForm.ShowForm(target);
+            }
+            InitializeDataView();
         }
 
         private void buttonSort_Click(object sender, EventArgs e)
         {
-            if (comboBoxSortOption.SelectedItem== null) return;
+            if (comboBoxSortOption.SelectedItem == null) return;
             datashow.DataSource = sort(comboBoxSortOption.SelectedItem.ToString()).Items;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (datashow.SelectedRows.Count > 0)
+            {
+                string[] pendingDelete = new string[datashow.SelectedRows.Count];
+                for (int index = 0; index < datashow.SelectedRows.Count; index++)
+                {
+                    pendingDelete[index] = datashow.SelectedRows[index].Cells[0].ToString();
+                }
+                QLSV.Database.RemoveRangeSV(pendingDelete);
+                InitializeDataView();
+                return;
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            QLSV.Database.SaveFile();
         }
     }
 }

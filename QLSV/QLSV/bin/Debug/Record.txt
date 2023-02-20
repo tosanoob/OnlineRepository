@@ -1,7 +1,9 @@
-001|N V A|21TCLC_DT1|01/01/2003|5.5|true|true|true|true
-002|N V B|21TCLC_DT1|01/01/2003|5.2|true|true|true|true
-003|N V C|21TCLC_DT2|01/01/2003|5.1|true|true|true|true
-004|D T D|21TCLC_DT2|01/01/2003|5.5|true|true|true|true
-005|D T E|21TCLC_DT3|01/01/2003|5.7|true|true|true|true
-006|N T F|21TCLC_DT3|01/01/2003|5.8|true|true|true|true
-007|N T G|21TCLC_DT4|01/01/2003|5.9|true|true|true|true
+101|N V A|21TCLC_DT2|01/01/2003|2.9|True|True|True|True
+102|N A C|21TCLC_DT2|01/01/2003|1.5|True|True|True|True
+103|N V T|21TCLC_DT3|01/01/2003|2.4|True|True|True|True
+104|D M K|21TCLC_DT1|01/01/2003|3.5|True|True|True|True
+105|N N A|21TCLC_DT1|01/01/2003|4.7|True|True|True|True
+106|T V S|21TCLC_DT1|01/01/2003|1.4|True|True|True|True
+107|N T M|21TCLC_DT5|01/01/2003|2.5|True|True|True|True
+108|H L A T|21TCLC_DT1|01/01/2003|2.5|True|True|True|True
+109|Anh Ledger|21TDT|02/20/2023|5.5|True|True|True|True

@@ -1,0 +1,8 @@
+101|N V A|21TCLC_DT2|1/1/2003|2.9|true|true|true|true
+102|N A C|21TCLC_DT2|1/1/2003|1.5|true|true|true|true
+103|N V T|21TCLC_DT3|1/1/2003|2.4|true|true|true|true
+104|D M K|21TCLC_DT1|1/1/2003|3.5|true|true|true|true
+105|N N A|21TCLC_DT1|1/1/2003|4.7|true|true|true|true
+106|T V S|21TCLC_DT1|1/1/2003|1.4|true|true|true|true
+107|N T M|21TCLC_DT5|1/1/2003|2.5|true|true|true|true
+108|H L A T|21TCLC_DT1|1/1/2003|2.5|true|true|true|true
